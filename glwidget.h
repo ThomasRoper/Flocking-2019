@@ -19,8 +19,8 @@ public:
        void resizeGL(int w,int h);
 private:
         QTimer timer;
-        Flock m_flock;
-        Boid test;
+        Flock test;
+       // Boid test;
 
 };
 

@@ -8,13 +8,16 @@ class Flock// : public Boid
 {
 public:
     Flock();
-    Flock(glm::vec3 pos);
+
     ~Flock();
-    void addNewBoid(glm::vec3 pos);
+    void addNewBoids(int amount);
     void deleteBoid();
     void setWeights();
+    void draw();
     void update();
+    void applyBehavior();
     void setBoidView(float theta, float r);
+    float RandomFloat(float a, float b);
 private:
     glm::vec3 m_flockAveragePos;
     glm::vec3 m_leaderPos;
@@ -22,8 +25,8 @@ private:
     //arrays to store all the positions
     glm::vec3 m_flockPos;
     glm::vec3 m_flockVel;
-
-    std::vector<Boid> m_boidsInFlock;
+    float m_boundingbox = 1.2;
+    std::vector<Boid> m_Flock;
 
 
 };

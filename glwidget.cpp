@@ -18,7 +18,9 @@ void GLWidget::initializeGL()
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_LIGHT0);
     glEnable(GL_LIGHTING);
-    glScalef(0.2,0.2,0.2);
+    glScalef(0.1,0.1,0.1);
+    std::cout<<"just 100 please\n";
+    test.addNewBoids(100);
 
 };
 void GLWidget::paintGL()
@@ -27,25 +29,49 @@ void GLWidget::paintGL()
 
 
 
-
+    test.update();
+    /*
 
     test.seekTest();
 
     test.stayInWalls();
     test.Update(0.0,0.0);
     test.drawBoid();
-
+    */
     //rough
     glBegin(GL_LINES);
-    glVertex3f(2.0,2.0,0.0);
-    glVertex3f(2.0,-2.0,0.0);
-    glVertex3f(2.0,-2.0,0.0);
-    glVertex3f(-2.0,-2.0,0.0);
-    glVertex3f(-2.0,-2.0,0.0);
-    glVertex3f(-2.0,2.0,0.0);
-    glVertex3f(-2.0,2.0,0.0);
-    glVertex3f(2.0,2.0,0.0);
+    glVertex3f(-2.0,-2.0,-2.0);
+    glVertex3f(-2.0,2.0,-2.0);
+    glVertex3f(-2.0,-2.0,-2.0);
+    glVertex3f(2.0,-2.0,-2.0);
+    glVertex3f(-2.0,-2.0,-2.0);
+    glVertex3f(-2.0,-2.0,2.0);
+
+    glVertex3f(-2.0,2.0,-2.0);
+    glVertex3f(-2.0,2.0,2.0);
+    glVertex3f(-2.0,2.0,-2.0);
+    glVertex3f(2.0,2.0,-2.0);
+
+    glVertex3f(-2.0,2.0,2.0);
+    glVertex3f(2.0,2.0,2.0);
+    glVertex3f(-2.0,2.0,2.0);
+    glVertex3f(-2.0,-2.0,2.0);
+    glVertex3f(-2.0,-2.0,2.0);
+    glVertex3f(2.0,-2.0,2.0);
+
+    glVertex3f(2.0,2.0,2.0);
+    glVertex3f(2.0,2.0,-2.0);
+    glVertex3f(2.0,2.0,2.0);
+    glVertex3f(2.0,-2.0,2.0);
+
+    glVertex3f(2.0,-2.0,-2.0);
+    glVertex3f(2.0,2.0,-2.0);
+    glVertex3f(2.0,-2.0,-2.0);
+    glVertex3f(2.0,-2.0,2.0);
+
+
     glEnd();
+    glRotatef(0.2,0,1,0);
 
 }
 void GLWidget::resizeGL(int w,int h)
